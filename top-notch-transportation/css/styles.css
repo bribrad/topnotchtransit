@@ -1,0 +1,173 @@
+/* Basic styling for the website */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #3d6fb6;
+    /* padding: 1rem; */
+    width: 100%;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar styling */
+.navbar-container {
+    display: flex;
+    justify-content: end;
+    vertical-align: center;
+    padding-top: 35px;
+    padding-bottom: 30px;
+}
+
+.navbar {
+    /* position: absolute; */
+    /* float: right; */
+    /* top: 0; */
+    /* left: 0; */
+    /* width: 100%; */
+    
+}
+
+/* Remove bullet points from nav items */
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add some spacing between nav items */
+.navbar-nav .nav-link {
+    margin-right: 4rem;
+    color: rgba(255,255,255,.5);
+}
+
+a {
+    font-weight: 600;
+}
+
+section {
+    padding: 2rem;
+}
+
+section#home {
+    background: url('../img/hauler.jpeg') no-repeat center center/cover;
+    height: 80vh;
+    width: --webkit-fill-available;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+section#home h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+section#home p {
+    font-size: 1.5rem;
+}
+
+.content-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+/* Paragraph overlay */
+.paragraph-overlay {
+    /*position: absolute;*/
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    padding: 1rem;
+    border-radius: 10px; 
+    color: #fff;
+}
+
+
+/* Paragraph overlay */
+.paragraph-overlay-container {
+    /*position: absolute;*/
+    height:100%;
+    bottom: 2rem;
+    left: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 50%;
+    justify-content: flex-start;
+}
+
+
+/* Home section overlay */
+.home-overlay {
+    border-radius: 10px;
+}
+
+/* Home section overlay container */
+.home-overlay-container {
+    /*position: absolute;*/
+    /*width: 100%;*/
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* Home section overlay title */
+.home-overlay h1 {
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(120deg, #D4AF37, #FFD700, #D4AF37);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    font-family: 'Great Vibes', cursive;
+}
+
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* FLOATS */
+.author {}
+
+.author-img {
+    float: left;
+}
+
+header > div > a > img {
+    float: left;
+    height: 80px;
+    width: 200px;
+    margin: 10px;
+}
+
+header > nav {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix::after {
+    clear: both;
+    content: '';
+    display: block;
+}
