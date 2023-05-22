@@ -282,16 +282,12 @@ ul {
 
 .nav-item {
     padding-top: 5%;
+    transition: transform 150ms ease;
 }
 
 .navbar-nav .nav-link {
     color: rgba(255,255,255,.5);
-}
-
-header.nav-fixed {
-    width: 100%;
-    position: fixed;
-    transition: 0.3s ease-in-out;
+    transition: transform 150ms ease;
 }
 
 .nav-active {
@@ -342,21 +338,44 @@ a {
   @media screen and (max-width: 991px) {
     .navbar.responsive {position: relative;}
     .navbar.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
+        position: absolute;
+        padding-top: 10%;
+        padding-left: 83%;
+        left: 0;
+        transition: transform 150ms linear;
+      /* top: 0; */
+    }
+
+    .navbar.responsive .navbar-brand {
+        display: none;
+        transition: transform 150ms linear;
+    }
+
+    .navbar.responsive .nav-container {
+        display: flex;
+        flex-direction: column;
+        bottom: 0;
+        transition: transform 150ms linear;
     }
 
     .navbar.responsive .navbar-nav {
         display: block;
         height: 100%;
+        padding-bottom: 5%;
+        transition: transform 150ms linear;
     }
     .navbar.responsive a {
       float: none;
       display: block;
       text-align: left;
-      color: black;
+      color: #c1a367 !important;
       z-index: 5;
+      transition: transform 150ms linear;
+    }
+
+    .navbar.responsive .nav-item {
+        padding-top: 20px;
+        transition: transform 150ms ease;
     }
   }
 
