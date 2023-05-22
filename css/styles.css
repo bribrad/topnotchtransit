@@ -448,6 +448,39 @@ header > nav {
     width: 100%;
     object-fit: cover;
   }
+
+  #fullpageimg {
+    display: none;
+    position: absolute;
+    z-index: 4;
+    /* top:50%; */
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    align-self: center;
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-color: transparent;
+  }
+
+  #fullpage {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    /* top:50%; */
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    align-self: center;
+    background-size: contain;
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-color: black;
+    opacity: 50%;
+  }
   
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 800px) {
