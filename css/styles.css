@@ -282,6 +282,26 @@ ul {
     color: rgba(255,255,255,.5);
 }
 
+header.nav-fixed {
+    width: 100%;
+    position: fixed;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-active {
+    background-color:#fff;
+    box-shadow: 5px -1px 12px -5px grey;
+    transition: background-color 200ms linear;
+}
+
+.nav-active a {
+    color: #c1a367 !important;
+}
+
+.navbar-fixed.scrolled {
+    background-color: #fff !important;
+}
+
 .navbar-nav a:hover {
     color: #c1a367 !important;
     text-shadow: 2px 2px black;
@@ -409,6 +429,42 @@ header > nav {
 }
 
 /* GALLERY PAGE */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 30%;
+    max-width: 30%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
 .py-210 {
     padding-top: 210px !important;
     padding-bottom: 210px !important;
