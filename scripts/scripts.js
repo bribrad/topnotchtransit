@@ -42,3 +42,14 @@ window.onload = () => {
     });
     console.log('full page loaded');
 }
+
+function myFunction() {
+    var x = document.getElementById("myTopNav");
+    if (x.className === "navbar-fixed") {
+      console.log("adding responsive class");
+      x.className += " responsive";
+    } else {
+      console.log("removing responsive class");  
+      x.className = "navbar-fixed";
+    }
+  }
