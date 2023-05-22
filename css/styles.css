@@ -304,8 +304,16 @@ header.nav-fixed {
     color: #c1a367 !important;
 }
 
+.navbar-fixed a {
+    color: rgba(255,255,255,.5);
+}
+
 .navbar-fixed.scrolled {
     background-color: #fff !important;
+}
+.navbar-fixed.scrolled a {
+    color: #c1a367 !important;
+    text-shadow: 2px 2px black;
 }
 
 .navbar-nav a:hover {
@@ -326,7 +334,7 @@ a {
     }
 
     .container .nav-container {
-        color: transparent;
+        /* color: blue; */
     }
   }
   
@@ -338,11 +346,17 @@ a {
       right: 0;
       top: 0;
     }
-    .navbar.responsive .navbar-nav .nav-link {
+
+    .navbar.responsive .navbar-nav {
+        display: block;
+        height: 100%;
+    }
+    .navbar.responsive a {
       float: none;
       display: block;
       text-align: left;
       color: black;
+      z-index: 5;
     }
   }
 
