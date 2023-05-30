@@ -529,7 +529,7 @@ section#services {
 
 section#gallery {
   background: url('../img/hauler-3.jpeg') no-repeat center center/cover;
-    height: 80vh;
+    height: 0vh;
     width: --webkit-fill-available;
     display: flex;
     justify-content: center;
