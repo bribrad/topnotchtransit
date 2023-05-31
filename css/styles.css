@@ -504,25 +504,23 @@ width: 83.3333333333%;
   section#about, section#services {
     height: 100% !important;
   }
-  section#careers {
-    height: 100vh !important;
-  }
   .contact-content-holder {
     display: grid !important;
   }
 }
 
-section#about, section#services, section#careers, section#contact-us {
-background: url('../img/hero-page.jpg') no-repeat center center/cover;
-height: 100%;
-width: --webkit-fill-available;
-display: flex;
-justify-content: center;
-/* align-items: center; */
-color: #fff;
-text-align: center;
-padding-bottom: 5%;
-}
+section#about, section#contact-us, section#services, section#careers {
+  background: url('../img/hero-page.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  height: 100%;
+  width: --webkit-fill-available;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  color: #fff;
+  text-align: center;
+  padding-bottom: 5%;
+  }
 
 section#contact-us {
 background: url('../img/hero-page.jpg') no-repeat center center/cover;
