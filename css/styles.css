@@ -551,7 +551,6 @@ section#about, section#contact-us, section#services, section#careers {
   background: url('../img/hero-page.jpg') no-repeat center center/cover;
   min-height: 100vh;
   height: 100%;
-  width: --webkit-fill-available;
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -559,18 +558,6 @@ section#about, section#contact-us, section#services, section#careers {
   text-align: center;
   padding-bottom: 5%;
   }
-
-section#contact-us {
-background: url('../img/hero-page.jpg') no-repeat center center/cover;
-height: 100%;
-width: --webkit-fill-available;
-display: flex;
-justify-content: center;
-/* align-items: center; */
-color: #fff;
-text-align: center;
-padding-bottom: 5%;
-}
 
 section#gallery {
 background: url('../img/hauler-3.jpeg') no-repeat center center/cover;
