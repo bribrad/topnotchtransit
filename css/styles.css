@@ -505,12 +505,12 @@ section > p {
 }
 
 @media screen and (max-width: 858px) {
-  section#about {
+  section#about, section#services {
     height: 100% !important;
   }
 }
 
-section#about {
+section#about, section#services {
   background: url('../img/hero-page.jpg') no-repeat center center/cover;
   height: 100vh;
   width: --webkit-fill-available;
@@ -532,17 +532,6 @@ section#contact-us {
   color: #fff;
   text-align: center;
   padding-bottom: 5%;
-}
-
-section#services {
-  background: url('../img/hero-page.jpg') no-repeat center center/cover;
-    height: 130vh;
-    width: --webkit-fill-available;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    color: #fff;
-    text-align: center;
 }
 
 section#gallery {
@@ -578,15 +567,11 @@ article {
     border-radius: 30px;
     width: 100%;
     height: 100%;
-    opacity: 70%;
+    opacity: 88%;
     padding-left: 1%; 
     padding-right: 1%; 
     /* margin-top: 12%; */
     /* padding: 5%; */
-}
-
-section#contact-us > div > article {
-  opacity: 90%;
 }
 
 .entry-header {
@@ -602,12 +587,23 @@ header.entry-header .entry-title {
     color: --bs-heading-color;
 }
 
+.services-content {
+  padding-bottom: 1%;
+  padding-top: 1%;
+  display: grid;
+  height: 100%;
+}
+
+.services-content h2, p {
+  color: black;
+}
+
 .contact-content {
   background-color: #c1a367; 
   border-radius: 10px;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   height: 100%;
 }
 
@@ -786,6 +782,7 @@ header > nav {
     vertical-align: middle;
     width: 100%;
     object-fit: cover;
+    border-radius: 5px;
   }
 
   #fullpageimg {
