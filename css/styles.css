@@ -504,9 +504,15 @@ section > p {
   width: 83.3333333333%;
 }
 
-section#about {
+@media screen and (max-width: 858px) {
+  section#about, section#contact-us {
+    height: 100% !important;
+  }
+}
+
+section#about, section#contact-us {
   background: url('../img/hero-page.jpg') no-repeat center center/cover;
-  height: 100%;
+  height: 100vh;
   width: --webkit-fill-available;
   display: flex;
   justify-content: center;
@@ -529,7 +535,7 @@ section#services {
 
 section#gallery {
   background: url('../img/hauler-3.jpeg') no-repeat center center/cover;
-    height: 0vh;
+    height: 80vh;
     width: --webkit-fill-available;
     display: flex;
     justify-content: center;
@@ -537,18 +543,6 @@ section#gallery {
     color: #fff;
     text-align: center;
 }
-
-section#contact-us {
-  background: url('../img/hero-page.jpg') no-repeat center center/cover;
-    height: 130vh;
-    width: --webkit-fill-available;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    color: #fff;
-    text-align: center;
-}
-
 
 .content-container {
     height: 100%;
@@ -579,6 +573,10 @@ article {
     /* padding: 5%; */
 }
 
+section#contact-us > div > article {
+  opacity: 80%;
+}
+
 .entry-header {
     display: flex;
     justify-content: left;
@@ -590,6 +588,34 @@ header.entry-header .entry-title {
     font-weight: 400;
     font-size: 1.66666666667rem;
     color: --bs-heading-color;
+}
+
+.contact-content {
+  background-color: #c1a367; 
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  height: 100%;
+}
+
+.contact-content p {
+  margin-bottom: 1.75em;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1em;
+  color: black;   
+}
+
+.contact-content a {
+  font-weight: 500;
+  text-decoration: underline;
+  color:black; 
+}
+
+.contact-content iframe {
+  height: 100%;
+  width: 80%;
 }
 
 .entry-content p {
@@ -619,6 +645,18 @@ header.entry-header .entry-title {
 .feature-box-icon i {
     color: black;
 }
+
+.contact-icon {
+  margin: 20px;
+  line-height: 80px;
+}
+
+.contact-icon i {
+  color: black;
+  height: 79px;
+  width: 79px;
+}
+
 
 .icon {
     
