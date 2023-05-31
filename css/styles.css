@@ -505,12 +505,12 @@ section > p {
 }
 
 @media screen and (max-width: 858px) {
-  section#about, section#services {
+  section#about, section#services, section#careers {
     height: 100% !important;
   }
 }
 
-section#about, section#services {
+section#about, section#services, section#careers {
   background: url('../img/hero-page.jpg') no-repeat center center/cover;
   height: 100vh;
   width: --webkit-fill-available;
