@@ -505,14 +505,26 @@ section > p {
 }
 
 @media screen and (max-width: 858px) {
-  section#about, section#contact-us {
+  section#about {
     height: 100% !important;
   }
 }
 
-section#about, section#contact-us {
+section#about {
   background: url('../img/hero-page.jpg') no-repeat center center/cover;
   height: 100vh;
+  width: --webkit-fill-available;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  color: #fff;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+section#contact-us {
+  background: url('../img/hero-page.jpg') no-repeat center center/cover;
+  height: 100%;
   width: --webkit-fill-available;
   display: flex;
   justify-content: center;
@@ -574,7 +586,7 @@ article {
 }
 
 section#contact-us > div > article {
-  opacity: 80%;
+  opacity: 90%;
 }
 
 .entry-header {
@@ -615,7 +627,12 @@ header.entry-header .entry-title {
 
 .contact-content iframe {
   height: 100%;
-  width: 80%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.contact-info-form-container {
+  padding: 15px;
 }
 
 .entry-content p {
@@ -647,8 +664,9 @@ header.entry-header .entry-title {
 }
 
 .contact-icon {
-  margin: 20px;
-  line-height: 80px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  /* line-height: 60px; */
 }
 
 .contact-icon i {
