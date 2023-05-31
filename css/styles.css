@@ -501,8 +501,11 @@ width: 83.3333333333%;
 }
 
 @media screen and (max-width: 858px) {
-  section#about, section#services, section#careers {
+  section#about, section#services {
     height: 100% !important;
+  }
+  section#careers {
+    height: 100vh !important;
   }
   .contact-content-holder {
     display: grid !important;
