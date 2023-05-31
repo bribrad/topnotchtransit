@@ -455,6 +455,13 @@ section > p {
   font-size: 1.5rem;
 }
 
+.display-1 {
+  color: #c1a367; 
+  font-weight: 800 !important; 
+  line-height: 1.1; 
+  font-size: 60px; 
+  letter-spacing: 4px;
+}
 .row > .col-2 {
 flex: 0 0 auto;
 width: 16.66666667%;
@@ -498,6 +505,12 @@ width: 75%;
 .row > .col-10 {
 flex: 0 0 auto;
 width: 83.3333333333%;
+}
+
+@media screen and (max-width: 1025px) {
+  .display-1 {
+    font-weight: 700 important!;
+  }
 }
 
 @media screen and (max-width: 858px) {
@@ -606,6 +619,7 @@ padding-bottom: 20px;
 display: inline-block;
 /* margin-bottom: 20px; */
 height: 100%;
+width: 100%;
 }
 
 .contact-content p {
