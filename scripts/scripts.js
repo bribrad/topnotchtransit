@@ -18,11 +18,11 @@ window.onscroll = () => {
 
 function myFunction() {
     var x = document.getElementById("myTopNav");
-    if (x.className === "navbar navbar-expand-lg navbar-expand-sm navbar-top  navbar-fixed navbar-opaque") {
+    if (x.className === "container") {
       console.log("adding responsive class");
       x.className += " responsive";
     } else {
       console.log("removing responsive class");  
-      x.className = "navbar navbar-expand-lg navbar-expand-sm navbar-top  navbar-fixed navbar-opaque";
+      x.className = "container";
     }
   }
