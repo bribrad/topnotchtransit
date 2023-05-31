@@ -364,11 +364,11 @@ a {
 }
 
 @media  screen and (max-width: 600px) {
-.container .nav-container {
-  /* color: blue; */
+/* .container .nav-container {
+  color: blue;
   width:fit-content;
   margin-right: 10%;
-} 
+}  */
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
@@ -405,12 +405,15 @@ a {
   .navbar.responsive .nav-container {
       display: flex;
       flex-direction: column;
+      height: 100%;
       bottom: 0;
+      background-color: white;
+      opacity: 80%;
       transition: transform 150ms linear;
   }
 
   .navbar.responsive .navbar-nav {
-      display: block;
+      display: grid;
       height: 100%;
       padding-bottom: 5%;
       transition: transform 150ms linear;
