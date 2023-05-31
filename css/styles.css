@@ -388,8 +388,7 @@ a {
 @media screen and (max-width: 768px) {
   .responsive {
     position: absolute;
-    min-height: 100vh !important;
-    height: 100% !important;
+    height: 100vh !important;
     padding: 0 !important;
   }
 
