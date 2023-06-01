@@ -25,12 +25,27 @@
     <!-- Add custom JavaScript -->
     <script src="scripts/scripts.js" defer></script>
     <script src="https://kit.fontawesome.com/0fc7af2ffc.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            var body = "Name: " + document.getElementById("inputFirstName").value 
+                    + " " + document.getElementById("inputLastName").value 
+                    + "<br> Email: " + document.getElementById("inputEmail").value
+                    + "<br> Message: \"" + document.getElementById("inputMessage").value;
+            Email.send({
+                SecureToken: "9f272a75-5f17-42eb-8d04-579dbdb571ee",
+                // To : 'hr@topnotchtransitllc.com',
+                To: 'brianabradshaw2015@gmail.com',
+                From : "info@bribrad.com",
+                Subject : "New Contact Form Message",
+                Body : body
+            }).then(
+            message => alert("Message Sent Successfully")
+            );
+        }
+    </script>
 </head>
 <body>
-    <header class="clearfix"></header>
-    <!-- Navbar Mobile -->
-    <!-- <div class="navbar navbar-mobile navbar-mobile-style-1 bg-white mfp-hide" id="navbar-mobile-style-1"></div> -->
-    
     <main>
         <section id="contact-us" class="text-center text-white row">
             <div id="myTopNav" class="container" style="height: fit-content;">
@@ -97,14 +112,14 @@
                             <div class="col-md-4 contact-content">
                                 <h2 style="color: black;">What do you need to transport?</h2>
                                 <div class="contact-info-form-container">
-                                    <form>
+                                    <form onsubmit="sendEmail(); reset(); return false;" name="contactForm">
                                         <div class="mb-3">
                                             <label for="inputFirstName" class="form-label">First Name</label>
-                                            <input type="text" class="form-control" id="firstName" placeholder="John">
+                                            <input type="text" class="form-control" id="inputFirstName" placeholder="John">
                                         </div>
                                         <div class="mb-3">
                                             <label for="inputLastName" class="form-label">Last Name</label>
-                                            <input type="text" class="form-control" id="lastName" placeholder="Doe">
+                                            <input type="text" class="form-control" id="inputLastName" placeholder="Doe">
                                         </div>
                                         <div class="mb-3">
                                             <label for="inputEmail" class="form-label">Email</label>
@@ -115,7 +130,7 @@
                                             <label for="inputMessage" class="form-label">Message</label>
                                             <textarea class="form-control" id="inputMessage" rows="3"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <input type="submit" value="Submit" class="btn btn-primary">
                                         </form>
                                 </div>
                             </div>
