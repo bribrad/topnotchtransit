@@ -1,5 +1,8 @@
+<?php
+include 'submit.php';
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +27,7 @@
     
     <!-- Add custom JavaScript -->
     <script src="scripts/scripts.js" defer></script>
-    <script src="scripts/firebase.js"></script>
+    <script type="module" src="./scripts/firebase.js"></script>
     <script src="https://kit.fontawesome.com/0fc7af2ffc.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -46,7 +49,7 @@
                                 <h1 class="display-6"><a href="services.html" class="nav-link" aria-expanded="false" aria-haspopup="true"><span>Services</span></a></h1>
                             </li>
                             <li class="nav-item">
-                                <h1 class="display-6"><a href="careers.html" class="nav-link" aria-expanded="false" aria-haspopup="true"><span>Careers</span></a></h1>
+                                <h1 class="display-6"><a href="careers.php" class="nav-link" aria-expanded="false" aria-haspopup="true"><span>Careers</span></a></h1>
                             </li>
                             <li class="nav-item">
                                 <h1 class="display-6"><a href="gallery.html" class="nav-link" aria-expanded="false" aria-haspopup="true"><span>Gallery</span></a></h1>
@@ -72,24 +75,32 @@
                         <div style="width: 100%; height: auto; display: flex; background-color: #c1a367; border-radius: 10px;">
                             <div class="col-lg contact-content">
                                 <div class="contact-content-holder" style="padding: 10px; margin-bottom: 10px;">
-                                    <form>
+                                    <form method="post" action="" enctype="multipart/form-data">
+                                        <!-- Display submission status -->
+                                        <?php if(!empty($statusMsg)){ ?>
+                                            <p class="statusMsg <?php echo !empty($msgClass)?$msgClass:''; ?>"><?php echo $statusMsg; ?></p>
+                                        <?php } else { ?>
+                                            <p class="" style="z-index: 1000;"> Status Message is empty.</p>
+                                        <?php }  ?>
                                         <div class="mb-3">
                                             <label for="inputFirstName" class="form-label">First Name</label>
-                                            <input type="text" class="form-control" id="firstName" placeholder="John">
+                                            <input type="text" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="John" value="<?php echo !empty($postData['inputFirstName'])?$postData['inputFirstName']:''; ?>"> 
                                         </div>
                                         <div class="mb-3">
                                             <label for="inputLastName" class="form-label">Last Name</label>
-                                            <input type="text" class="form-control" id="lastName" placeholder="Doe">
+                                            <input type="text" class="form-control" name="inputLastName" id="inputLastName" placeholder="Doe"  value="<?php echo !empty($postData['inputLastName'])?$postData['inputLastName']:''; ?>">
                                         </div>
                                         <div class="mb-3">
                                           <label for="inputEmail" class="form-label">Email</label>
-                                          <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="john.doe@hotmail.com">
+                                          <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="john.doe@hotmail.com"  value="<?php echo !empty($postData['inputEmail'])?$postData['inputEmail']:''; ?>">
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="inputGroupFile02">Resume/CV Upload</label>
-                                            <input type="file" class="form-control" id="inputFile">
+                                            <label class="form-label" for="inptuFile">Resume/CV Upload</label>
+                                            <input type="file" name="attachment" class="form-control" id="inputFile">
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <div class="submit">
+                                            <input type="submit" name="submit" class="btn btn-primary" value="SUBMIT">
+                                        </div>
                                       </form>
                                 </div>
                             </div>
