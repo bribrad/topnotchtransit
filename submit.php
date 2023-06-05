@@ -78,6 +78,7 @@ if(isset($_POST['submit'])){
             // Allow certain file formats 
             if(in_array($fileType, $allowFileTypes)){ 
                 // Upload file to the server 
+                debug_to_console($_FILES["attachment"]);
                 if(move_uploaded_file($_FILES["attachment"]["tmp_name"], $targetFilePath)){ 
                     $uploadedFile = $targetFilePath; 
                     debug_to_console('success');

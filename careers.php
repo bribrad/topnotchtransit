@@ -79,8 +79,6 @@ include 'submit.php';
                                         <!-- Display submission status -->
                                         <?php if(!empty($statusMsg)){ ?>
                                             <p class="statusMsg <?php echo !empty($msgClass)?$msgClass:''; ?>"><?php echo $statusMsg; ?></p>
-                                        <?php } else { ?>
-                                            <p class="" style="z-index: 1000;"> Status Message is empty.</p>
                                         <?php }  ?>
                                         <div class="mb-3">
                                             <label for="inputFirstName" class="form-label">First Name</label>
