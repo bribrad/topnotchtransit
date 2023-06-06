@@ -1,6 +1,13 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
+echo getenv('SMTP_PW_BRI') . "test\n";
+$env_array =getenv();
+foreach ($env_array as $key=>$value)
+{
+    debug_to_console($key . ': ' . $value);
+}
+
 // echo phpinfo();
 // echo exec('whoami');
 //smtp settings 
@@ -144,10 +151,11 @@ if(isset($_POST['submit'])){
                     $mail->Host       = 'smtp.elasticemail.com';                //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                     $mail->Username   = 'info@bribrad.com';                     //SMTP username
-                    $mail->Password   = '9260C4167FC919A3769E0E8DE13B005DF563'; //SMTP password
+                    $mail->Password   = getenv('SMPT_PW_BRI');                  //SMTP password
                     // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         //Enable implicit TLS encryption
                     $mail->Port       = 2525;                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-                
+                    
+                    debug_to_console(getenv('SMPT_PW_BRI'));
                     //Recipients
                     $mail->setFrom('info@bribrad.com', 'Bri Brad');
                     $mail->addAddress('brianabradshaw2015@gmail.com', 'Briana Bradshaw');     //Add a recipient
@@ -186,7 +194,7 @@ if(isset($_POST['submit'])){
                     $mail->Host       = 'smtp.elasticemail.com';                     //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
                     $mail->Username   = 'info@bribrad.com';                     //SMTP username
-                    $mail->Password   = '9260C4167FC919A3769E0E8DE13B005DF563'; //SMTP password
+                    $mail->Password   = getenv('SMPT_PW_BRI');                  //SMTP password
                     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                     $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                 
