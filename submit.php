@@ -1,15 +1,9 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
-echo getenv('SMTP_PW_BRI') . "test\n";
-$env_array =getenv();
-foreach ($env_array as $key=>$value)
-{
-    debug_to_console($key . ': ' . $value);
-}
-
 // echo phpinfo();
 // echo exec('whoami');
+
 //smtp settings 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -21,9 +15,8 @@ require './PHPMailer/src/SMTP.php';
 $mail = new PHPMailer(true);
 
 // email settings
-$toEmail = 'ravenbradshaw@live.com';
-$from = 'info@bribrad.com';
-$fromName = 'BRIBRAD';
+$from = 'info@topnotchtransit.org';
+$fromName = 'Top Notch Transit LLC Employment Portal';
 
 // File upload settings 
 $attachmentUploadDir = "uploads/"; 
@@ -64,6 +57,7 @@ if(isset($_POST['submit'])){
         $valErr .= 'Please enter subject.<br/>'; 
     } 
          
+    $smtpPW = 'F7C529E4B99B988ACEC5DD1D3388ABC7E226';
     // Check whether submitted data is valid 
     if(empty($valErr)){ 
         $uploadStatus = 1; 
@@ -150,26 +144,19 @@ if(isset($_POST['submit'])){
                     $mail->isSMTP();                                            //Send using SMTP
                     $mail->Host       = 'smtp.elasticemail.com';                //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                    $mail->Username   = 'info@bribrad.com';                     //SMTP username
-                    $mail->Password   = getenv('SMPT_PW_BRI');                  //SMTP password
-                    // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         //Enable implicit TLS encryption
+                    $mail->Username   = 'info@topnotchtransit.org';             //SMTP username
+                    $mail->Password   = $smtpPW;                                //SMTP password
                     $mail->Port       = 2525;                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                     
-                    debug_to_console(getenv('SMPT_PW_BRI'));
                     //Recipients
-                    $mail->setFrom('info@bribrad.com', 'Bri Brad');
-                    $mail->addAddress('brianabradshaw2015@gmail.com', 'Briana Bradshaw');     //Add a recipient
-                    // $mail->addAddress('ellen@example.com');               //Name is optional
-                    // $mail->addReplyTo('info@example.com', 'Information');
-                    // $mail->addCC('cc@example.com');
-                    // $mail->addBCC('bcc@example.com');
-                
+                    $mail->setFrom('info@topnotchtransit.org', 'Top Notch Transit LLC Employment Portal');
+                    $mail->addAddress('hr@topnotchtransitllc.com', 'Top Notch Transit LLC Human Resources Department');
+                    
                     //Attachments
-                    $mail->addAttachment($targetFilePath);         //Add attachments
-                    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+                    $mail->addAttachment($targetFilePath);                      //Add attachments
                 
                     //Content
-                    $mail->isHTML(true);                                  //Set email format to HTML
+                    $mail->isHTML(true);                                        //Set email format to HTML
                     $mail->Subject = $emailSubject;
                     $mail->Body    = $htmlContent;
                     $mail->AltBody = $altContent;
@@ -191,19 +178,18 @@ if(isset($_POST['submit'])){
                 try {
                     //Server settings
                     $mail->isSMTP();                                            //Send using SMTP
-                    $mail->Host       = 'smtp.elasticemail.com';                     //Set the SMTP server to send through
+                    $mail->Host       = 'smtp.elasticemail.com';                //Set the SMTP server to send through
                     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                    $mail->Username   = 'info@bribrad.com';                     //SMTP username
-                    $mail->Password   = getenv('SMPT_PW_BRI');                  //SMTP password
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                    $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+                    $mail->Username   = 'info@topnotchtransit.org';             //SMTP username
+                    $mail->Password   = $smtpPW;                                //SMTP password
+                    $mail->Port       = 2525;                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                 
                     //Recipients
-                    $mail->setFrom('info@bribrad.com', 'Bri Brad');
-                    $mail->addAddress('brianabradshaw2015@gmail.com', 'Briana Bradshaw');     //Add a recipient
+                    $mail->setFrom('info@topnotchtransit.org', 'Top Notch Transit LLC Employment Portal');
+                    $mail->addAddress('hr@topnotchtransitllc.com', 'Top Notch Transit LLC Human Resources Department');
                 
                     //Content
-                    $mail->isHTML(true);                                  //Set email format to HTML
+                    $mail->isHTML(true);                                        //Set email format to HTML
                     $mail->Subject = $emailSubject;
                     $mail->Body    = $htmlContent;
                     $mail->AltBody = $altContent;
