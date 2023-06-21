@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', 'On');
+// for testing purposes
+// ini_set('display_errors', 'On');
 // echo phpinfo();
 // echo exec('whoami');
 

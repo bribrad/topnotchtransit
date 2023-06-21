@@ -8,7 +8,7 @@ include 'submit.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Notch Transit</title>
 
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="./img/logo.jpg">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
